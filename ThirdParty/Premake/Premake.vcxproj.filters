@@ -1,0 +1,41 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="..">
+      <UniqueIdentifier>{61705900-4DFC-870B-B6AA-880BA255880B}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="..\Auxilium">
+      <UniqueIdentifier>{7E1D7A49-EAD2-F23E-73C7-EC15DF7BE942}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="..\Auxilium\ThirdParty">
+      <UniqueIdentifier>{78CB3212-64C5-5B64-4D32-F27439CBC1D0}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="..\Auxilium\ThirdParty\glad">
+      <UniqueIdentifier>{7F8921E4-EB96-4FCA-747D-4BB5E0891B81}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="..\Auxilium\ThirdParty\glfw">
+      <UniqueIdentifier>{378A21E4-A397-4FCA-2C7E-4BB5988A1B81}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="..\Frontiers">
+      <UniqueIdentifier>{0CADD451-F80F-64F6-A195-9CAC8DD72F79}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="..\..\Auxilium\ThirdParty\glad\premake5.lua">
+      <Filter>..\Auxilium\ThirdParty\glad</Filter>
+    </None>
+    <None Include="..\..\Auxilium\ThirdParty\glfw\premake5.lua">
+      <Filter>..\Auxilium\ThirdParty\glfw</Filter>
+    </None>
+    <None Include="..\..\Auxilium\premake5.lua">
+      <Filter>..\Auxilium</Filter>
+    </None>
+    <None Include="..\..\Frontiers\premake5.lua">
+      <Filter>..\Frontiers</Filter>
+    </None>
+    <None Include="..\..\premake5.lua">
+      <Filter>..</Filter>
+    </None>
+    <None Include="premake5.lua" />
+  </ItemGroup>
+</Project>
