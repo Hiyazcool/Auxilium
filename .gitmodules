@@ -1,0 +1,9 @@
+[submodule "Auxilium/Auxilium/ThirdParty/spdlog"]
+	path = Auxilium/Auxilium/ThirdParty/spdlog
+	url = https://github.com/gabime/spdlog
+[submodule "Auxilium/ThirdParty/spdlog"]
+	path = Auxilium/ThirdParty/spdlog
+	url = https://github.com/gabime/spdlog
+[submodule "Auxilium/ThirdParty/glfw"]
+	path = Auxilium/ThirdParty/glfw
+	url = https://github.com/Hiyazcool/glfw
