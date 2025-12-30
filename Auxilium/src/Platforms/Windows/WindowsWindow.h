@@ -1,0 +1,42 @@
+#pragma once
+#include "axpch.h"
+#include "Core/Define.h"
+#include "Core/Window.h"
+#include <GLFW/glfw3.h>
+#include "Core/Log.h"
+namespace Auxilium {
+	class WindowsWindow : public Window {
+	public:
+		WindowsWindow(const WindowProps& props);
+		virtual ~WindowsWindow();
+
+		void OnUpdate() override;
+
+		unsigned int GetWidth() const override { return data.Width; }
+		unsigned int GetHeight() const override { return data.Height; }
+
+		// Window attributes
+		void SetCallback(const CallbackFn& callback) override { data.Callback = callback; }
+		void SetVSync(bool enabled) override;
+		bool IsVSync() const override;
+
+		virtual void* GetNativeWindow() const { return window; }
+	private:
+		virtual void Init(const WindowProps& props);
+		virtual void Shutdown();
+	private:
+		GLFWwindow* window;
+		//Scope<GraphicsContext> context;
+
+		struct WindowData
+		{
+			std::string Title;
+			unsigned int Width, Height;
+			bool VSync;
+
+			CallbackFn Callback;
+		};
+
+		WindowData data;
+	};
+};

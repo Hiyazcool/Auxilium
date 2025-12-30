@@ -3,7 +3,7 @@ project "Auxilium"
 	language "C++"
 	cppdialect "C++20"
 	staticruntime "off"
-
+	inheritdependencies "Off"
 	targetdir ("%{wks.location}/bin/" .. outputdir .. "/%{prj.name}")
 	objdir ("%{wks.location}/bin-int/" .. outputdir .. "/%{prj.name}")
 
@@ -17,11 +17,13 @@ project "Auxilium"
 		"ThirdParty/stb_image/**.cpp",
 		"ThirdParty/glm/glm/**.hpp",
 		"ThirdParty/glm/glm/**.inl",
+		"%{wks.location}/Catalyst/src"
 	}
 
 	defines {
-		"_CRT_SECURE_NO_WARNINGS",
-		"GLFW_INCLUDE_NONE"
+		"CRT_SECURE_NO_WARNINGS",
+		"GLFW_INCLUDE_NONE",
+		"AXLM_WINDOWS_PLATFORM"
 	}
 
 	includedirs {
@@ -31,12 +33,14 @@ project "Auxilium"
 		"%{IncludeDir.Glad}",
 		"%{IncludeDir.glm}",
 		"%{IncludeDir.stb_image}",
+		"%{wks.location}/Catalyst/src"
 	}
 
 	links {
 		"GLFW",
 		"Glad",
 		"opengl32.lib",
+		"Catalyst"
 
 	}
 	flags { "NoPCH" }
@@ -48,10 +52,6 @@ project "Auxilium"
 		}
 
 		links {
-			"%{Library.WinSock}",
-			"%{Library.WinMM}",
-			"%{Library.WinVersion}",
-			"%{Library.BCrypt}",
 		}
 
 	filter "configurations:Debug"
@@ -61,9 +61,6 @@ project "Auxilium"
 
 		links
 		{
-			"%{Library.ShaderC_Debug}",
-			"%{Library.SPIRV_Cross_Debug}",
-			"%{Library.SPIRV_Cross_GLSL_Debug}"
 		}
 
 	filter "configurations:Release"
@@ -73,9 +70,6 @@ project "Auxilium"
 
 		links
 		{
-			"%{Library.ShaderC_Release}",
-			"%{Library.SPIRV_Cross_Release}",
-			"%{Library.SPIRV_Cross_GLSL_Release}"
 		}
 
 	filter "configurations:Distribution"
@@ -85,7 +79,4 @@ project "Auxilium"
 
 		links
 		{
-			"%{Library.ShaderC_Release}",
-			"%{Library.SPIRV_Cross_Release}",
-			"%{Library.SPIRV_Cross_GLSL_Release}"
 		}

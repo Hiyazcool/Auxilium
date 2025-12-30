@@ -1,51 +1,47 @@
-project "Frontiers"
-	kind "ConsoleApp"
+project "Catalyst"
+	kind "SharedLib"
 	language "C++"
 	cppdialect "C++20"
-		inheritdependencies "Off"
 	staticruntime "off"
-
+	inheritdependencies "Off"
 	targetdir ("%{wks.location}/bin/" .. outputdir .. "/%{prj.name}")
 	objdir ("%{wks.location}/bin-int/" .. outputdir .. "/%{prj.name}")
 
-	files
-	{
+	files {
 		"src/**.h",
-		"src/**.cpp",
-		"%{wks.location}/Catalyst/src"
+		"src/**.cpp"
 	}
 
-	includedirs
-	{
-		"%{wks.location}/Auxilium/src",
-		"%{wks.location}/Auxilium/ThirdParty",
-		"%{wks.location}/Catalyst/src",
-		"%{wks.location}/Auxilium/ThirdParty/spdlog/include",
-		"%{IncludeDir.glm}"
+	includedirs {
+		"src"
 	}
-		defines {
-	}
-	links
-	{
 
-		"Auxilium",
-		"Catalyst"
+	links {
+	}
+	defines {
+		"CATALYST_BUILD_DLL",
+		"CATALYST_WINDOWS_PLATFORM"
 	}
 
 	filter "system:windows"
+		defines "CATALYST_WINDOWS_PLATFORM"
 		systemversion "latest"
 
 	filter "configurations:Debug"
-		defines "AX_DEBUG"
+		defines "CT_DEBUG"
+		defines {
+		"CATALYST_BUILD_DLL",
+		"CATALYST_WINDOWS_PLATFORM"
+	}
 		runtime "Debug"
 		symbols "on"
 
 	filter "configurations:Release"
-		defines "AX_RELEASE"
+		defines "CT_RELEASE"
 		runtime "Release"
 		optimize "on"
 
 	filter "configurations:Distribution"
-		defines "AX_DISTRIBUTION"
+		defines "CT_DISTRIBUTION"
 		runtime "Release"
 		optimize "on"
