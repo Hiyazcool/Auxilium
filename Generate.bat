@@ -1,2 +1,2 @@
-call ThirdParty\Premake\premake5.exe vs2022
+call ThirdParty\Premake\bin\premake5.exe vs2022
 PAUSE

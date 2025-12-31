@@ -19,6 +19,6 @@ namespace Auxilium {
 		std::unique_ptr<Window> window;
 		bool isRunning = true;
 	};
-	Application* CreateApplication();
+	extern Application* CreateApplication();
 }
 

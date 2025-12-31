@@ -1,5 +1,6 @@
 #pragma once 
 #include "Auxilium.h"
+#include "Core/Entry.h"
 class FrontiersApplication : public Auxilium::Application {
 
 

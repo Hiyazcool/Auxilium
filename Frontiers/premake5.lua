@@ -22,12 +22,13 @@ project "Frontiers"
 		"%{wks.location}/Catalyst/src",
 		"%{wks.location}/Auxilium/ThirdParty/spdlog/include",
 		"%{IncludeDir.glm}"
+	 
 	}
-		defines {
+	defines {
+			
 	}
 	links
 	{
-
 		"Auxilium",
 		"Catalyst"
 	}
